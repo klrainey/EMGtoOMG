@@ -3,12 +3,23 @@ An EMG signal to text converter, versions 5.0+ operable for testing with or with
 
 # Instructions
 Download version 5.1 and the EMGtoOMG.py, then open verison 5.1 in LabView and select EMGtoOMG.py for the module path. Run the program. The program works by switching between different "states" that change based on the user's pattern of inputs. The first encountered state is "inactive": the program will wait for the user to input signal 1 (S1) before it is able to do anything. User clicks on S1 to turn it ON, simulating an incoming EMG signal from a flexing muscle group. User clicks on S1 again to turn it off, simulating the EMG signal stopping and the user relaxing muscle group 1.  
+  
 The second state encountered is "choose set": the user inputs any combination of two signals (S1, S2, or S3) that match the identity of one of nine sets. Set 1 is a set of proofreading tools, in case of a typo. Sets 2 through 9 contain various alphanumeric characters that make up the entire alphabet and all essential symbols. Refer to the graphic with the nine boxes: the first input signal selects the row, then second input signal selects the column of the desired set. For example: S2, S3 selects the set in the 2nd row and 3rd column, therefore identifying the set containing VWXYZ. At this point, the box corresponding with the chosen set will have a green light as an indicator.  
+  
 The thrid state encountered is "selection and execution". Here, S3 will cycle through the available alphanumeric characters or proofreading functions. Send as many S3 signals as necessary to select the desired alphanumeric character or function. Once the desired character/function is selected, there are two options to execute the selection. S2 will place the selected character (or trigger the desired function), and remain in the chosen set to quickly access another character, and stay in the "selection and execution" state. S1 will place the selected character, but return the user to the "choose set" state.  
   
-"inactive"  S1 to activate  S2 does nothing  S3 does nothing  
-"choose set"  send S1 through S3 to select the set row  send S1 through S3 to select the set column  
-"selection and execution"  send S3 repeatedly to find the desired function or alphanumeric character  send S2 to place selected character, and remain in this state  
+"inactive"  
+S1 to activate  
+S2 does nothing  
+S3 does nothing  
+  
+"choose set"  
+send S1 through S3 to select the set row  
+send S1 through S3 to select the set column  
+  
+"selection and execution"  
+send S3 repeatedly to find the desired function or alphanumeric character  
+send S2 to place selected character, and remain in this state  
 send S1 to place selected character, and move back to "choose set" state  
   
 This is the basics.
